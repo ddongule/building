@@ -1,6 +1,6 @@
 # Drinkin Project [Rebuilt]
 
-###커뮤니티 만들기
+### 커뮤니티 만들기
 
 #### 1. 기능
 
