@@ -1,8 +1,14 @@
 Rails.application.routes.draw do
+
+  devise_for :users
   resources :posts
+
+  root 'posts#index'
   
-  root "posts#index"
+  get 'faqs/index' => 'faqs#index'
   
+  get 'tutorials/index' => 'tutorials#index' 
+    
   get 'posts/show/:id' => 'posts#show'
 
   post 'posts/show/:post_id/comments/create' => 'comments#create'

@@ -1,24 +1,14 @@
-# README
+# Drinkin Project [Rebuilt]
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### 커뮤니티 만들기
 
-Things you may want to cover:
+#### 1. 기능
 
-* Ruby version
+ - 로그인 기능 [devise, rolify] : <u>general</u>, <u>company</u>, <u>admin</u>
+ - post 기능 [carrierwave, minimagick], 페이지 기능 [kaminari]
+- like 기능
+- 퍼가기 기능
 
-* System dependencies
+#### 2. 메인 플랫폼
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ....
+- post 기능
