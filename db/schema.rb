@@ -11,6 +11,19 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema.define(version: 20180718102206) do
+<<<<<<< HEAD
+
+=======
+  
+>>>>>>> 0b6bde0d1a070112b1a8a9a3d393631d6b1f3266
+  create_table "comments", force: :cascade do |t|
+    t.string "content"
+    t.string "user"
+    t.integer "post_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["post_id"], name: "index_comments_on_post_id"
+  end
 
   create_table "posts", force: :cascade do |t|
     t.string "nickname"
