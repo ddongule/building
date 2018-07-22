@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
 
-  root 'main#index'
+  root 'main#index', :as => 'root'
   
   get 'order/index', :as => 'order'
   get 'intro/index', :as => 'intro_index'
