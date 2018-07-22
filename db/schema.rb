@@ -27,7 +27,6 @@ ActiveRecord::Schema.define(version: 20180718102206) do
     t.text "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index [nil], name: "index_posts_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
