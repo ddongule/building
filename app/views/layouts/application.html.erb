@@ -3,13 +3,12 @@
   <head>
     <title>DrinkIn</title>
     <meta name="viewport" content="width=device-width, initial-scale=0.8" >
-    <%= javascript_include_tag 'application' %>
     <%= yield(:head) %>
     <%= csrf_meta_tags %>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 
     <%= csrf_meta_tags %>
 
@@ -22,7 +21,7 @@
 
     <div class="header-item-container">
       <nav class="navigation">
-        <%# <%= image_tag ('menu.png'), :id => "menu-icon" %> 
+        <!--<%# <%= image_tag ('menu.png'), :id => "menu-icon" %>--> 
         <ul>
           <li><%= link_to 'Home', root_path, :class => "link nav-link" %></li>
           <li><%= link_to 'Contact', root_path, :class => "link nav-link" %></li>
@@ -36,11 +35,14 @@
             <li><%= link_to '로그인', new_user_session_path, :class => "link nav-link" %></li>
           <% end %>
 
-          </li>
-
+          <li><a href = "/intro/index">이용안내</a></li>
+          <li><a href = "/order/index">주문하기</a></li>
+          <li><a href = "/faqs/index">FAQ</a></li>
+          <li><a href = "/tutorials/index">튜토리얼</a></li>
         </ul>
       </nav>
     </div>
+
   </header>
   
   <body>
