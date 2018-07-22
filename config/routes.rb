@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
-  root 'main/index'
   devise_for :users
 
-
+  root 'main#index'
+  
+  get 'order/index'
+  get 'intro/index'
   get 'faqs/index' => 'faqs#index'
   get 'tutorials/index' => 'tutorials#index'
 
