@@ -72,7 +72,7 @@ body {
 
   &:hover {
     background: none;
-    color: rgb(32, 81, 207);
+    color: rgba(177, 0, 60, 1);
   }
 }
 
@@ -110,13 +110,16 @@ body {
 }
 
 .header .header-item-container {
-  float: right;
+  // float: right;
   margin: 17px;
   font-size: 16px;
 }
 
-.header .navigation {
+.header .navigation .item-left {
   float: left;
+}
+.header .navigation .item-right {
+  float: right;
 }
 
 .header .navigation .nav-link {
