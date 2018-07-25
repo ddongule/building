@@ -1,16 +1,15 @@
 <h1>주문하기</h1>
 <head>
 <script>
-    var temp = "hello world";
-
 
     function onSelect(elmnt, title){
         console.log(title);
         temp = title;
     };
 
-    function getItem(){
-        return temp;
+    var temp = function getItem(){
+        var output = "good";
+        return output;
     };
 
     </script>
@@ -39,7 +38,7 @@
 
 <form action = "/payment/index" method = "post">
     <input type='hidden' value='<%= form_authenticity_token %>' name = 'authenticity_token'></input>
-    <input type = 'hidden' value = "javascript:getItem()" name = 'temp'></input>
+    <input type = 'hidden' value = temp() name = 'temp'></input>
     <input type = 'submit' value = "주문하기"></input>
 </form>
 

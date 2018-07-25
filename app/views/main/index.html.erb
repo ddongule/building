@@ -1,3 +1,13 @@
+<script>
+  var dbTestRef = firebase.database().ref('test/');
+  var data = {"대상":"동규","짝궁":"민경"};
+  dbTestRef.set(data);
+
+  dbTestRef.on('value',function(snapshot){
+    console.log(snapshot.val());
+  });
+
+</script>
 
 <h1>드린킨 홈페easy입니다.</h1>
 <p>많이 사랑해주세요!</p>
