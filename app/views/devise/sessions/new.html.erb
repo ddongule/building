@@ -2,22 +2,23 @@
  
 <div class="login-wrap">
 	<div class="login-html">
-		<input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Sign In</label>
-		<input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Sign Up</label>
-		<div class="login-form">
+		<input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">로그인</label>
+		<input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">회원가입</label>
+		
+    <div class="login-form">
 			<div class="sign-in-htm">
 
         <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
           <div class="group">
             <div class="field">
-              <%= f.label :email %><br />
+              <%= f.label :이메일 %><br />
               <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "input"%>
             </div>
           </div>
 
           <div class="group">
             <div class="field">
-              <%= f.label :password, class: "label"  %><br />
+              <%= f.label :비밀번호, class: "label"  %><br />
               <%= f.password_field :password, autocomplete: "off", class: "input" %>
             <div class="field">
           </div>
@@ -34,66 +35,68 @@
           <div class="field">
           <div class="actions">
             <div class="group">
-                <%= f.submit "Sign in", class: "button" %>
+                <%= f.submit "로그인", class: "button" %>
             </div>
           </div>
-
+        <% end  %>
           <div class="hr"></div>
           <div class="foot-lnk">
             <a href="#forgot">Forgot Password?</a>
           </div>
-        </div>
+        
+      </div>
 
 
 
 
         <div class="sign-up-htm">
-          <div class="field">
-            <div class="group">
-              <%= f.label :name %><br />
-              <%= f.text_field :name, autofocus: true, autocomplete: "name", class: "input" %>
-            </div>
-          </div>
+          <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
 
-          <div class="field">
-            <div class="group">
-              <%= f.label :email %><br />
-              <%= f.email_field :email, autofocus: true, autocomplete: "email" , class: "input"%>
+            <div class="field">
+              <div class="group">
+                <%= f.label :name %><br />
+                <%= f.text_field :name, autofocus: true, autocomplete: "name", class: "input" %>
+              </div>
             </div>
-          </div>
 
-          <div class="field">
-            <div class="group">
-              <%= f.label :password %>
-                <% if @minimum_password_length %>
-                  <em>(<%= @minimum_password_length %> characters minimum)</em>
-                <% end %><br />
-              <%= f.password_field :password, autocomplete: "off", class: "input" %>
+            <div class="field">
+              <div class="group">
+                <%= f.label :email %><br />
+                <%= f.email_field :email, autofocus: true, autocomplete: "email" , class: "input"%>
+              </div>
             </div>
-          </div>
 
-          <div class="field">
-            <div class="group">
-              <%= f.label :password_confirmation %><br />
-              <%= f.password_field :password_confirmation, autocomplete: "off" , class: "input", data_type: "password"%>
+            <div class="field">
+              <div class="group">
+                <%= f.label :password %>
+                  <% if @minimum_password_length %>
+                    <em>(<%= @minimum_password_length %> characters minimum)</em>
+                  <% end %><br />
+                <%= f.password_field :password, autocomplete: "off", class: "input" %>
+              </div>
             </div>
-          </div>
 
-          <div class="actions">
-            <div class="group">
-              <%= f.submit "Sign up" %>
-              <input type="submit" class="button" value="Sign Up">
+            <div class="field">
+              <div class="group">
+                <%= f.label :password_confirmation %><br />
+                <%= f.password_field :password_confirmation, autocomplete: "off" , class: "input", data_type: "password"%>
+              </div>
             </div>
-          </div>
 
-        <% end %>
+            <div class="actions">
+              <div class="group">
+                <%= f.submit "Sign up" %>
+                <input type="submit" class="button" value="Sign Up">
+              </div>
+            </div>
+           <% end %>
 
         <div class="hr"></div>
           <div class="foot-lnk">
             <label for="tab-1">Already Member?</a>
           </div>
         </div>
-        
+
 		</div>
 	</div>
 </div> 
