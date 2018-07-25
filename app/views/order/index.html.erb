@@ -1,2 +1,45 @@
-<h1>Order#index</h1>
-<p>Find me in app/views/order/index.html.erb</p>
+<h1>주문하기</h1>
+<head>
+<script>
+    var temp = "hello world";
+
+
+    function onSelect(elmnt, title){
+        console.log(title);
+        temp = title;
+    };
+
+    function getItem(){
+        return temp;
+    };
+
+    </script>
+</head>
+
+<div id="row">
+    <div class="items">
+        <p>레드 와인</p>
+        <section>
+        <ul>
+            <li onclick="onSelect(this, '와인이름')">와인</li>
+            <li onclick="onSelect(this, '화이트와인')">꾸꾸</li>
+            <li onclick="onSelect(this, '블루와인')">웅웅</li>
+        </ul>
+        </section>
+    </div>
+    <div class="items">
+        <p>화이트 와인</p>
+        <ul>
+            <li onclick="onSelect(this, '레드와인')">뿌뿌</li>
+            <li onclick="onSelect(this, '화이트와인')">꾸꾸</li>
+            <li onclick="onSelect(this, '블루와인')">웅웅</li>
+        </ul>
+    </div>
+</div>
+
+<form action = "/payment/index" method = "post">
+    <input type='hidden' value='<%= form_authenticity_token %>' name = 'authenticity_token'></input>
+    <input type = 'hidden' value = "javascript:getItem()" name = 'temp'></input>
+    <input type = 'submit' value = "주문하기"></input>
+</form>
+

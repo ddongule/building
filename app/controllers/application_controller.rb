@@ -6,5 +6,10 @@ class ApplicationController < ActionController::Base
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :email])
   end
-
+  
+  def authority_forbidden(error)
+    Authority.logger.warn(error.message)
+    redirect_to request.referrer.presence || root_path, :alert => 'You are not authorized to complete that action.'
+  end
+  
 end
