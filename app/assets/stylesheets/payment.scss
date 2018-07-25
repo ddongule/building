@@ -1,3 +1,35 @@
 // Place all the styles related to the payment controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import url('https://fonts.googleapis.com/css?family=Jua');
+
+* {
+  font-family: 'Jua', sans-serif !important; 
+}
+
+table {
+  border-collapse: collapse;
+  text-align: center;
+  width: 100%;
+}
+
+th, td {
+  padding: 8px;
+}
+
+th {
+  background-color: #ba0000;
+  color: white;
+}
+
+tr:nth-child(odd){background-color: #ffa8a8}
+
+#head {
+  font-size: 50px;
+  color: #ba0000;
+}
+
+#button {
+    background-color: #ba0000;
+    color: white;
+}
