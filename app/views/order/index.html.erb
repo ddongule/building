@@ -1,18 +1,5 @@
 <h1>주문하기</h1>
 <head>
-<script>
-
-    function onSelect(elmnt, title){
-        console.log(title);
-        temp = title;
-    };
-
-    var temp = function getItem(){
-        var output = "good";
-        return output;
-    };
-
-    </script>
 </head>
 
 <div id="row">
@@ -20,18 +7,18 @@
         <p>레드 와인</p>
         <section>
         <ul>
-            <li onclick="onSelect(this, '와인이름')">와인</li>
-            <li onclick="onSelect(this, '화이트와인')">꾸꾸</li>
-            <li onclick="onSelect(this, '블루와인')">웅웅</li>
+            <li onclick="onSelect('와인이름')">와인</li>
+            <li onclick="onSelect('화이트와인')">꾸꾸</li>
+            <li onclick="onSelect('블루와인')">웅웅</li>
         </ul>
         </section>
     </div>
     <div class="items">
         <p>화이트 와인</p>
         <ul>
-            <li onclick="onSelect(this, '레드와인')">뿌뿌</li>
-            <li onclick="onSelect(this, '화이트와인')">꾸꾸</li>
-            <li onclick="onSelect(this, '블루와인')">웅웅</li>
+            <li onclick="onSelect('레드와인')">뿌뿌</li>
+            <li onclick="onSelect('화이트와인')">꾸꾸</li>
+            <li onclick="onSelect('블루와인')">웅웅</li>
         </ul>
     </div>
 </div>

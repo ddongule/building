@@ -1,11 +1,4 @@
 <script>
-  var dbTestRef = firebase.database().ref('test/');
-  var data = {"대상":"동규","짝궁":"민경"};
-  dbTestRef.set(data);
-
-  dbTestRef.on('value',function(snapshot){
-    console.log(snapshot.val());
-  });
 
 </script>
 
