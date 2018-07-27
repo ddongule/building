@@ -1,5 +1,5 @@
 class PaymentController < ApplicationController
   def index
-    @temp = params[:temp]
+    @list = params[:buyList]
   end
 end
