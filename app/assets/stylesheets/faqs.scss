@@ -1,3 +1,67 @@
 // Place all the styles related to the faqs controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.qa-wrap{
+  width:80%;
+  margin:auto;
+	max-width: 700px;
+	min-height:480px;
+	position:relative;
+	background-color: #fff;
+	box-shadow:0 2px 5px 0 rgba(0, 0, 0, 0.24), 0 15px 18px 0 rgba(0, 0, 0, 0.19);
+  z-index: 1;
+}
+.qa {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 0px 30px 0px;
+}
+
+.qa .collapsible {
+  // background-color: #ba0000;
+  position: relative;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  padding: 18px;
+
+  background-color: rgba(247,179,45,1);
+  color: black;
+  cursor: pointer;
+
+  width: 85%;
+  border: 0.5px solid rgba(210, 210, 210, 0.2);
+  border-radius: 30px;
+  text-align: left;
+  outline: none;
+  font-size: 20px;
+	box-shadow:0 1px 1px 0 rgba(0, 0, 0, 0.24), 0 1px 6px 0 rgba(0, 0, 0, 0.19);
+
+}
+
+.active, .collapsible:hover {
+  background-color: rgba(186, 0, 0, 0.2);
+}
+
+.collapsible:after {
+  color: black;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+
+.collapsible span {
+  color: rgba(186, 0, 0, 1);
+}
+
+.content {
+  padding: 0 18px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  background-color: #fff;
+}
+
+.content span {
+  color:  rgba(186, 0, 0, 1);
+}
