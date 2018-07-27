@@ -10,8 +10,9 @@
             <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
               <div class="group">
                 <div class="field">
-                  <%= f.label :이메일 %><br />
+                  <%= f.label :이메일 , class: "label"%><br />
                   <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "input"%>
+                  <span class="bar"></span>
                 </div>
               </div>
 
@@ -19,6 +20,7 @@
                 <div class="field">
                   <%= f.label :비밀번호, class: "label"  %><br />
                   <%= f.password_field :password, autocomplete: "off", class: "input" %>
+                  <span class="bar"></span>
                 </div>
               </div>
 
@@ -52,32 +54,36 @@
 
               <div class="field">
                 <div class="group">
-                  <%= f.label :"이름" %><br />
+                  <%= f.label :"이름", class: "label"  %><br />
                   <%= f.text_field :name, autofocus: true, autocomplete: "name", class: "input" %>
+                  <span class="bar"></span>
                 </div>
               </div>
 
               <div class="field">
                 <div class="group">
-                  <%= f.label :"이메일" %><br />
+                  <%= f.label :"이메일", class: "label"  %><br />
                   <%= f.email_field :email, autofocus: true, autocomplete: "email" , class: "input"%>
+                  <span class="bar"></span>
                 </div>
               </div>
 
               <div class="field">
                 <div class="group">
-                  <%= f.label :"비밀번호" %>
+                  <%= f.label :"비밀번호", class: "label"  %>
                     <% if @minimum_password_length %>
                       <em>(<%= @minimum_password_length %> characters minimum)</em>
                     <% end %><br />
                   <%= f.password_field :password, autocomplete: "off", class: "input" %>
+                  <span class="bar"></span>
                 </div>
               </div>
 
               <div class="field">
                 <div class="group">
-                  <%= f.label :"비밀번호 확인" %><br />
+                  <%= f.label :"비밀번호 확인", class: "label"  %><br />
                   <%= f.password_field :password_confirmation, autocomplete: "off" , class: "input", data_type: "password"%>
+                  <span class="bar"></span>
                 </div>
               </div>
 
