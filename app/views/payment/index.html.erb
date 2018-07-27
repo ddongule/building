@@ -1,15 +1,17 @@
 <head>
   <script>
+    /*
     var dbTestRef = firebase.database().ref('test/');
     dbTestRef.on('value',function(snapshot){
       console.log(snapshot.val());
     });
+    */
   </script>
 </head>
 
 <body>
   <h1 id="head">결제하기</h1>
-
+  <%= @list %>
   <form action = "#" method = "post">
     <input type='hidden' value='<%= form_authenticity_token %>' name = 'authenticity_token'></input>
     <table>

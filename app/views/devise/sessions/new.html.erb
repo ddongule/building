@@ -1,7 +1,5 @@
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-
 <script>
-  var dbTestRef = firebase.database().ref('sign/');
+  var firebase_signDB = firebase.database().ref('sign/');
 </script>
 
 <script>
@@ -12,7 +10,7 @@
     var userPassword = $('#userPassword').val();
 
     var userData = {name: userName, email: userEmail, password: userPassword};
-    dbTestRef.push(userData);
+    firebase_signDB.push(userData);
 
   }
 </script>
