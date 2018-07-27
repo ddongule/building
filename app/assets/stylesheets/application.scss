@@ -37,7 +37,8 @@ footer, header, hgroup, menu, nav, section {
 	display: block;
 }
 body {
-	line-height: 1;
+  line-height: 1;
+  width:100%;
 }
 ol, ul {
 	list-style: none;
@@ -73,6 +74,11 @@ h1, h2, h3, h4, h5, h6, p {
 body {
   margin: 70px 20px;
   padding: 20px;
+}
+
+body .container {
+	margin-right: -0.75rem;
+	margin-left: -0.75rem;
 }
 
 .link {

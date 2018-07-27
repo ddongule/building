@@ -32,41 +32,40 @@
     <%= csrf_meta_tags %>
 
   </head>
-   <header class="header">
-      <div class="logo">
-        <%= link_to (image_tag("logo.png", size:"120x35", :alt => "rss feed")), root_path , :class => "logo-link" %>
-      </div>
+  <header class="header">
+    <div class="logo">
+      <%= link_to (image_tag("logo.png", size:"120x35", :alt => "rss feed")), root_path , :class => "logo-link" %>
+    </div>
 
-      <div class="header-item-container">
-        <nav class="navigation">
-          <div class="item-left">
-            <!--<%# <%= image_tag ('menu.png'), :id => "menu-icon" %>--> 
-            <ul>
-              <%# <li><%= link_to 'Home', root_path, :class => "link nav-link" </li> %>
-              <li><%= link_to 'Drinkin 소개', intro_index_path, :class => "link nav-link" %></li>
-              <li><%= link_to '주문하기', order_path, :class => "link nav-link" %></li>
-              <li><%= link_to 'FAQ', faq_path, :class => "link nav-link" %></li>
-              <li><%= link_to '이용안내', tutorials_path, :class => "link nav-link" %></li>
-            </ul>
-          </div>
-          <div class="item-right">
-            <ul>
-              <% if user_signed_in? %>
-                  <li><%= current_user.name %> 님</li>
-                  <li><%= link_to "Roles : " + user_roles(current_user), '#', :class => "link nav-link" %></li> 
-                  <li><%= link_to '로그아웃', destroy_user_session_path, :method => :delete, :class => "link nav-link" %></li>
-              <% else %>
-                <li><%= link_to '회원가입', new_user_registration_path, :class => "link nav-link" %></li>
-                <li><%= link_to '로그인', new_user_session_path, :class => "link nav-link" %></li>
-              <% end %>
-            </ul>
-          </div>
-        </nav>
-      </div>
+    <div class="header-item-container">
+      <nav class="navigation">
+        <div class="item-left">
+          <!--<%# <%= image_tag ('menu.png'), :id => "menu-icon" %>--> 
+          <ul>
+            <%# <li><%= link_to 'Home', root_path, :class => "link nav-link" </li> %>
+            <li><%= link_to 'Drinkin 소개', intro_index_path, :class => "link nav-link" %></li>
+            <li><%= link_to '주문하기', order_path, :class => "link nav-link" %></li>
+            <li><%= link_to 'FAQ', faq_path, :class => "link nav-link" %></li>
+            <li><%= link_to '이용안내', tutorials_path, :class => "link nav-link" %></li>
+          </ul>
+        </div>
+        <div class="item-right">
+          <ul>
+            <% if user_signed_in? %>
+                <li><%= current_user.name %> 님</li>
+                <li><%= link_to "Roles : " + user_roles(current_user), '#', :class => "link nav-link" %></li> 
+                <li><%= link_to '로그아웃', destroy_user_session_path, :method => :delete, :class => "link nav-link" %></li>
+            <% else %>
+              <li><%= link_to '회원가입', new_user_registration_path, :class => "link nav-link" %></li>
+              <li><%= link_to '로그인', new_user_session_path, :class => "link nav-link" %></li>
+            <% end %>
+          </ul>
+        </div>
+      </nav>
+    </div>
   </header>
   
   <body>
-  
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <%= yield %>
