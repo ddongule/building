@@ -29,14 +29,6 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     
-    # materialized design 
-    <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
-
-    <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
-    ###################################################
-    
     <%= csrf_meta_tags %>
 
   </head>
@@ -51,7 +43,7 @@
           <!--<%# <%= image_tag ('menu.png'), :id => "menu-icon" %>--> 
           <ul>
             <%# <li><%= link_to 'Home', root_path, :class => "link nav-link" </li> %>
-            <li><%= link_to 'Drinkin 소개', intro_index_path, :class => "link nav-link" %></li>
+            <li><%= link_to '와잉 소개', intro_index_path, :class => "link nav-link" %></li>
             <li><%= link_to '주문하기', order_path, :class => "link nav-link" %></li>
             <li><%= link_to 'FAQ', faq_path, :class => "link nav-link" %></li>
             <li><%= link_to '이용안내', tutorials_path, :class => "link nav-link" %></li>
@@ -64,8 +56,8 @@
                 <li><%= link_to "Roles : " + user_roles(current_user), '#', :class => "link nav-link" %></li> 
                 <li><%= link_to '로그아웃', destroy_user_session_path, :method => :delete, :class => "link nav-link" %></li>
             <% else %>
-              <li><%= link_to '회원가입', new_user_registration_path, :class => "link nav-link" %></li>
-              <li><%= link_to '로그인', new_user_session_path, :class => "link nav-link" %></li>
+              <li><%#= link_to '회원가입', new_user_registration_path, :class => "link nav-link" #%></li>
+              <li><%= link_to '로그인 / 회원가입', new_user_session_path, :class => "link nav-link" %></li>
             <% end %>
           </ul>
         </div>

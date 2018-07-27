@@ -19,7 +19,8 @@ a{color:inherit;text-decoration:none}
 	min-height:800px;
 	position:relative;
 	// background:url(https://raw.githubusercontent.com/khadkamhn/day-01-login-form/master/img/bg.jpg) no-repeat center;
-	background-color: #480707;
+	// background-color: #480707;
+	background-color: #eeeee;
 	box-shadow:0 2px 5px 0 rgba(0, 0, 0, 0.24), 0 15px 18px 0 rgba(0, 0, 0, 0.19);
 	z-index: 1;
 }
@@ -47,7 +48,6 @@ a{color:inherit;text-decoration:none}
 	display:none;
 }
 .login-html .tab,
-.login-form .group .label,
 .login-form .group .button{
 	text-transform:uppercase;
 }
@@ -73,6 +73,8 @@ a{color:inherit;text-decoration:none}
 .login-form .group{
 	margin-bottom:5px;
 	padding: 20px 0 0 0;
+	// position:relative; 
+  // margin-bottom:45px; 
 }
  
 .login-form .group .button{
@@ -81,14 +83,48 @@ a{color:inherit;text-decoration:none}
 	display:block;
 	font-size: 15px;
 }
-.login-form .group .label,
-.login-form .group .input{
-	width:100%;
-	color:black;
-	display:block;
-	font-size: 15px;
+
+input:focus ~ .label, input:valid ~ .label 		{
+  top:-20px;
+  font-size:15px;
+  color:rgb(0, 0, 0);
 }
-.login-form .group .input,
+
+.bar 	{ position:relative; display:block; width:100%; } 
+.bar:before, .bar:after 	{
+  content:'';
+  height:2px; 
+  width:0;
+  bottom:1px; 
+  position:absolute;
+  background:#b1003c; 
+  transition:0.2s ease all; 
+  -moz-transition:0.2s ease all; 
+  -webkit-transition:0.2s ease all;
+}
+.bar:before {
+  left:50%;
+}
+.bar:after {
+  right:50%; 
+}
+input:focus ~ .bar:before, input:focus ~ .bar:after {
+  width:50%;
+}
+
+.login-form .group .input{
+font-size:18px;
+padding:10px 10px 10px 5px;
+display:block;
+width:100%;
+border:none;
+border-bottom:1px solid #757575;
+}
+input:focus 		{ outline:none; }
+
+
+
+// .login-form .group .input,
 .login-form .group .button{
 	border:none;
 	padding:10px 20px;
@@ -103,7 +139,15 @@ a{color:inherit;text-decoration:none}
 	color: #333;
 	font-size:15px;
 	// padding: 10px;
+	position:absolute;
+	pointer-events:none;
+	// left:5px;
+	// top:100px;
+	transition:0.2s ease all; 
+	-moz-transition:0.2s ease all; 
+	-webkit-transition:0.2s ease all;
 }
+
 .login-form .group .button{
 	background:#b1003c; 
 }
@@ -163,3 +207,4 @@ a{color:inherit;text-decoration:none}
 .foot-lnk{
 	text-align:center;
 }
+
