@@ -1,17 +1,36 @@
 <h1>주문하기</h1>
 <head>
-<script>
+    <script>
+        Array.prototype.remove = function(index){
+            this.splice(index,1);
+        }
 
-    function onSelect(elmnt, title){
-        console.log(title);
-        temp = title;
-    };
+        var select_list = new Array();
 
-    var temp = function getItem(){
-        var output = "good";
-        return output;
-    };
+        function select(item){
+            var isExist = false;
+            var isExistIndex = 0;
 
+            for(var i = 0; i<select_list.length; i++){
+                if(select_list[i]===item){
+                    isExist = true;
+                    isExistIndex = i;
+                }
+            }
+            if(isExist){
+                select_list.remove(isExistIndex);
+            }
+            else{
+            select_list.push(item);
+            }
+            console.log(select_list);
+        };
+        
+        function receive(){
+            var listBox = document.getElementById('list');
+            listBox.value = select_list;
+            alert(listBox.value);
+        };
     </script>
 </head>
 
@@ -20,25 +39,25 @@
         <p>레드 와인</p>
         <section>
         <ul>
-            <li onclick="onSelect(this, '와인이름')">와인</li>
-            <li onclick="onSelect(this, '화이트와인')">꾸꾸</li>
-            <li onclick="onSelect(this, '블루와인')">웅웅</li>
+            <li onclick="select('동규와인')">동규1</li>
+            <li onclick="select('화이트와인')">동규2</li>
+            <li onclick="select('블루와인')">동규3</li>
         </ul>
         </section>
     </div>
     <div class="items">
         <p>화이트 와인</p>
         <ul>
-            <li onclick="onSelect(this, '레드와인')">뿌뿌</li>
-            <li onclick="onSelect(this, '화이트와인')">꾸꾸</li>
-            <li onclick="onSelect(this, '블루와인')">웅웅</li>
+            <li onclick="select('민경와인')">민경1</li>
+            <li onclick="select('그레이와인')">민경2</li>
+            <li onclick="select('퍼플와인')">민경3</li>
         </ul>
     </div>
 </div>
 
 <form action = "/payment/index" method = "post">
     <input type='hidden' value='<%= form_authenticity_token %>' name = 'authenticity_token'></input>
-    <input type = 'hidden' value = temp() name = 'temp'></input>
-    <input type = 'submit' value = "주문하기"></input>
+    <input type='hidden' name = 'buyList' id = 'list'></input>
+    <input type = 'submit' value = "주문하기" onclick = "receive()"></input>
 </form>
 

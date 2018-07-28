@@ -129,10 +129,7 @@ input:focus 		{ outline:none; }
 	border-radius:25px;
 	background:rgba(255,255,255,.9);
 }
-.login-form .group input[data-type="password"]{
-	text-security:circle;
-	-webkit-text-security:circle;
-}
+
 .login-form .group .label{
 	color: #333;
 	font-size:15px;
@@ -198,9 +195,9 @@ input:focus 		{ outline:none; }
 }
 
 .hr{
-	height:2px;
+	height:0.5px;
 	margin:60px 0 30px 0;
-	background:rgba(255,255,255,.7);
+	background:rgba(186, 0, 0, 0.6);
 }
 .foot-lnk{
 	text-align:center;

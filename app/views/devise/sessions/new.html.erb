@@ -1,3 +1,20 @@
+<script>
+  var firebase_signDB = firebase.database().ref('sign/');
+</script>
+
+<script>
+  function signUp(){
+  
+    var userName = $('#userName').val();
+    var userEmail = $('#userEmail').val();
+    var userPassword = $('#userPassword').val();
+
+    var userData = {name: userName, email: userEmail, password: userPassword};
+    firebase_signDB.push(userData);
+
+  }
+</script>
+
   <div class="row">
     <div class="login-wrap">
       <div class="login-html">
@@ -11,7 +28,7 @@
               <div class="group">
                 <div class="field">
                   <%= f.label :이메일 , class: "label"%><br />
-                  <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "input"%>
+                  <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "input", required: true %>
                   <span class="bar"></span>
                 </div>
               </div>
@@ -19,7 +36,7 @@
               <div class="group">
                 <div class="field">
                   <%= f.label :비밀번호, class: "label"  %><br />
-                  <%= f.password_field :password, autocomplete: "off", class: "input" %>
+                  <%= f.password_field :password, autocomplete: "off", class: "input", required: true %>
                   <span class="bar"></span>
                 </div>
               </div>
@@ -53,17 +70,17 @@
             <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
 
               <div class="field">
-                <div class="group">
+                <div class="group" id = "user_name">
                   <%= f.label :"이름", class: "label"  %><br />
-                  <%= f.text_field :name, autofocus: true, autocomplete: "name", class: "input" %>
+                  <%= f.text_field :name, autofocus: true, autocomplete: "name", class: "input", :id => 'userName', required: true %>
                   <span class="bar"></span>
                 </div>
               </div>
 
               <div class="field">
-                <div class="group">
+                <div class="group" id = "user_email">
                   <%= f.label :"이메일", class: "label"  %><br />
-                  <%= f.email_field :email, autofocus: true, autocomplete: "email" , class: "input"%>
+                  <%= f.email_field :email, autofocus: true, autocomplete: "email" , class: "input", :id => 'userEmail', required: true, %>
                   <span class="bar"></span>
                 </div>
               </div>
@@ -74,7 +91,7 @@
                     <% if @minimum_password_length %>
                       <em>(<%= @minimum_password_length %> characters minimum)</em>
                     <% end %><br />
-                  <%= f.password_field :password, autocomplete: "off", class: "input" %>
+                  <%= f.password_field :password, autocomplete: "off", class: "input", :id => 'userPassword', required: true, %>
                   <span class="bar"></span>
                 </div>
               </div>
@@ -82,14 +99,14 @@
               <div class="field">
                 <div class="group">
                   <%= f.label :"비밀번호 확인", class: "label"  %><br />
-                  <%= f.password_field :password_confirmation, autocomplete: "off" , class: "input", data_type: "password"%>
+                  <%= f.password_field :password_confirmation, autocomplete: "off" , class: "input", data_type: "password", required: true%>
                   <span class="bar"></span>
                 </div>
               </div>
 
               <div class="actions">
                 <div class="group">
-                  <%= f.submit "회원가입", class: "button"%>
+                  <%= f.submit "회원가입", class: "button", :onclick => "signUp();"%>
                 </div>
               </div>
               <% end %>
@@ -100,9 +117,8 @@
               </div>
           </div>
 
-        
         </div> 
       </div>
     </div> 
   </div>
-<%# <%= render "devise/shared/links" %>
+%# <%= render "devise/shared/links" %>
