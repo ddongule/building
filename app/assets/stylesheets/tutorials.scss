@@ -1,3 +1,18 @@
 // Place all the styles related to the tutorials controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.tutorials {
+    display: flex;
+    flex-flow: column nowrap;
+    flex: 1;
+    background-color: #fff;
+
+}
+ .tut {
+  border: 1px solid #EDEDED;
+ }
+
+ .tut:nth-child(1){
+  border-top: none;
+ }
