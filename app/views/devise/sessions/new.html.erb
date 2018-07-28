@@ -80,7 +80,7 @@
               <div class="field">
                 <div class="group" id = "user_email">
                   <%= f.label :"이메일", class: "label"  %><br />
-                  <%= f.email_field :email, autofocus: true, autocomplete: "email" , class: "input", :id => 'userEmail', required: true, %>
+                  <%= f.email_field :email, autofocus: true, autocomplete: "email" , class: "input", :id => 'userEmail', required: true %>
                   <span class="bar"></span>
                 </div>
               </div>
@@ -91,7 +91,7 @@
                     <% if @minimum_password_length %>
                       <em>(<%= @minimum_password_length %> characters minimum)</em>
                     <% end %><br />
-                  <%= f.password_field :password, autocomplete: "off", class: "input", :id => 'userPassword', required: true, %>
+                  <%= f.password_field :password, autocomplete: "off", class: "input", :id => 'userPassword', required: true %>
                   <span class="bar"></span>
                 </div>
               </div>
@@ -99,7 +99,7 @@
               <div class="field">
                 <div class="group">
                   <%= f.label :"비밀번호 확인", class: "label"  %><br />
-                  <%= f.password_field :password_confirmation, autocomplete: "off" , class: "input", data_type: "password", required: true%>
+                  <%= f.password_field :password_confirmation, autocomplete: "off" , class: "input", required: true%>
                   <span class="bar"></span>
                 </div>
               </div>
