@@ -1,24 +1,37 @@
-<h1 id="head">결제하기</h1>
+<head>
+  <script>
+    /*
+    var dbTestRef = firebase.database().ref('test/');
+    dbTestRef.on('value',function(snapshot){
+      console.log(snapshot.val());
+    });
+    */
+  </script>
+</head>
 
-<form action = "#" method = "post">
-  <input type='hidden' value='<%= form_authenticity_token %>' name = 'authenticity_token'></input>
-  <table>
-    <tr>
-      <th>속성</th>
-      <th>개수</th>
-    </tr>
-    <tr>
-      <td>음료</td>
-      <td>레드와인</td>
-    </tr>
-    <tr>
-      <td>수량</td>
-      <td><input type="text" name = "amount"></input>
-    </tr>
-    <tr>
-      <td>주소</td>
-      <td><input type="text" name = "adress"></input>
-    </tr>
-  </table>
-  <input type="submit" value = "결제" id="button"></input>
-</form>
+<body>
+  <h1 id="head">결제하기</h1>
+  <%= @list %>
+  <form action = "#" method = "post">
+    <input type='hidden' value='<%= form_authenticity_token %>' name = 'authenticity_token'></input>
+    <table>
+      <tr>
+        <th>속성</th>
+        <th>개수</th>
+      </tr>
+      <tr>
+        <td>음료</td>
+        <td>레드와인</td>
+      </tr>
+      <tr>
+        <td>수량</td>
+        <td><input type="text" name = "amount"></input>
+      </tr>
+      <tr>
+        <td>주소</td>
+        <td><input type="text" name = "adress"></input>
+      </tr>
+    </table>
+    <input type="submit" value = "결제" id="button"></input>
+  </form>
+</body>
