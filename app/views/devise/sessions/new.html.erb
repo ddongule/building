@@ -11,7 +11,7 @@
               <div class="group">
                 <div class="field">
                   <%= f.label :이메일 , class: "label"%><br />
-                  <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "input"%>
+                  <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "input", required: true %>
                   <span class="bar"></span>
                 </div>
               </div>
@@ -19,7 +19,7 @@
               <div class="group">
                 <div class="field">
                   <%= f.label :비밀번호, class: "label"  %><br />
-                  <%= f.password_field :password, autocomplete: "off", class: "input" %>
+                  <%= f.password_field :password, autocomplete: "off", class: "input", required: true %>
                   <span class="bar"></span>
                 </div>
               </div>
@@ -55,7 +55,7 @@
               <div class="field">
                 <div class="group">
                   <%= f.label :"이름", class: "label"  %><br />
-                  <%= f.text_field :name, autofocus: true, autocomplete: "name", class: "input" %>
+                  <%= f.text_field :name, autofocus: true, autocomplete: "name", class: "input", required: true %>
                   <span class="bar"></span>
                 </div>
               </div>
@@ -63,7 +63,7 @@
               <div class="field">
                 <div class="group">
                   <%= f.label :"이메일", class: "label"  %><br />
-                  <%= f.email_field :email, autofocus: true, autocomplete: "email" , class: "input"%>
+                  <%= f.email_field :email, autofocus: true, autocomplete: "email" , class: "input", required: true%>
                   <span class="bar"></span>
                 </div>
               </div>
@@ -74,7 +74,7 @@
                     <% if @minimum_password_length %>
                       <em>(<%= @minimum_password_length %> characters minimum)</em>
                     <% end %><br />
-                  <%= f.password_field :password, autocomplete: "off", class: "input" %>
+                  <%= f.password_field :password, autocomplete: "off", class: "input", required: true %>
                   <span class="bar"></span>
                 </div>
               </div>
@@ -82,7 +82,7 @@
               <div class="field">
                 <div class="group">
                   <%= f.label :"비밀번호 확인", class: "label"  %><br />
-                  <%= f.password_field :password_confirmation, autocomplete: "off" , class: "input", data_type: "password"%>
+                  <%= f.password_field :password_confirmation, autocomplete: "off" , class: "input", data_type: "password", required: true%>
                   <span class="bar"></span>
                 </div>
               </div>
@@ -99,10 +99,9 @@
                 <label for="tab-1">Already Member?</a>
               </div>
           </div>
-
-        
+          
         </div> 
       </div>
     </div> 
   </div>
-<%# <%= render "devise/shared/links" %>
+%# <%= render "devise/shared/links" %>
