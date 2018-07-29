@@ -5,6 +5,8 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+gem 'bootstrap-sass'
+gem 'simple_form'
 gem 'firebase'
 gem 'jquery-rails'
 gem 'coffee-script-source', '1.8.0'

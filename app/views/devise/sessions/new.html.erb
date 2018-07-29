@@ -4,15 +4,31 @@
 
 <script>
   function signUp(){
-  
     var userName = $('#userName').val();
     var userEmail = $('#userEmail').val();
     var userPassword = $('#userPassword').val();
 
     var userData = {name: userName, email: userEmail, password: userPassword};
+    
+    firebase.auth().createUserWithEmailAndPassword(userEmail, userPassword).catch(function(error){
+      var errorCode = error.code;
+      var errorMessage = error.message;
+      alert(errorMessage);
+    });
     firebase_signDB.push(userData);
-
   }
+
+  function signIn(){
+    var userEmail2 = $('#signIn_email').val();
+    var userPassword2 = $('#signIn_password').val();
+
+    firebase.auth().signInWithEmailAndPassword(userEmail2, userPassword2).catch(function(error){
+      var errorCode = error.code;
+      var errorMessage = error.message;
+      alert(errorMessage);
+    });
+  }
+ 
 </script>
 
   <div class="row">
@@ -87,10 +103,8 @@
 
               <div class="field">
                 <div class="group">
-                  <%= f.label :"비밀번호", class: "label"  %>
-                    <% if @minimum_password_length %>
-                      <em>(<%= @minimum_password_length %> characters minimum)</em>
-                    <% end %><br />
+                  <%= f.label :"비밀번호 (6자리 이상)", class: "label"  %>
+                    <br />
                   <%= f.password_field :password, autocomplete: "off", class: "input", :id => 'userPassword', required: true %>
                   <span class="bar"></span>
                 </div>
