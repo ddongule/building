@@ -6,32 +6,31 @@
       console.log(snapshot.val());
     });
     */
+    var nameStack = new Array();
+
+    function send(){
+      var infoBox = document.getElementById('info');
+      infoBox.value = nameStack;
+      alert(infoBox.value);
+    }
+
+    function namePush(item){
+      nameStack.push(item);
+    }
   </script>
 </head>
 
 <body>
   <h1 id="head">결제하기</h1>
-  <%= @list %>
-  <form action = "#" method = "post">
-    <input type='hidden' value='<%= form_authenticity_token %>' name = 'authenticity_token'></input>
-    <table>
-      <tr>
-        <th>속성</th>
-        <th>개수</th>
-      </tr>
-      <tr>
-        <td>음료</td>
-        <td>레드와인</td>
-      </tr>
-      <tr>
-        <td>수량</td>
-        <td><input type="text" name = "amount"></input>
-      </tr>
-      <tr>
-        <td>주소</td>
-        <td><input type="text" name = "adress"></input>
-      </tr>
-    </table>
-    <input type="submit" value = "결제" id="button"></input>
-  </form>
+    <form action = "/receipt/index" method = "get">
+      <% for i in 0..@value.length-1 %>
+        <label><%= @value[i] %></label>
+        <lable>개수</label>
+        <input type = 'text' name = <%= @value[i] %> id = 'input_info'></input>
+        <% end %>
+      <br/>
+
+      <input type = "hidden" name = "buyInfo" id = "info"></input>
+      <input type = 'submit' value = "결제하기" onclick="send();" ></input>
+    </form>
 </body>
