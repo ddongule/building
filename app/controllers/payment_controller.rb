@@ -1,5 +1,6 @@
 class PaymentController < ApplicationController
   def index
-    @list = params[:buyList]
+    list = params[:buyList]
+    @value = list.split(",")
   end
 end
