@@ -22,14 +22,25 @@
 
 <body>
   <h1 id="head">결제하기</h1>
+    <script> var id_num = 0; </script>
     <form action = "/receipt/index" method = "get">
       <% for i in 0..@value.length-1 %>
         <label><%= @value[i] %></label>
         <lable>개수</label>
-        <input type = 'text' name = <%= @value[i] %> id = 'input_info'></input>
+        <input type = 'text' name = <%= @value[i] %> id = <%= i %>></input>
+        <script>
+          id_num++;
+        </script>
         <% end %>
       <br/>
+<<<<<<< HEAD
       
+=======
+      <script>
+        for(var i = 0; i < id_num; i++ )
+        namePush(document.getElementById(i).name);
+      </script>
+>>>>>>> 5b75f2eadeeb9f7441fe1d9212fbaf9824c09fd1
       <input type = "hidden" name = "buyInfo" id = "info"></input>
       <input type = 'submit' value = "결제하기" onclick="send();" ></input>
     </form>
