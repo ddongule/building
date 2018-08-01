@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'myinfo/index'
+
   get 'receipt/index'
 
   get 'payment/index'
