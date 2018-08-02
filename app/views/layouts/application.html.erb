@@ -63,7 +63,7 @@
                 <li><%= link_to  current_user.name + "님", myinfo_index_path, :class => "link nav-link" %></li> 
                 <li><%= link_to '로그아웃', destroy_user_session_path, :method => :delete, :class => "link nav-link" %></li>
             <% else %>
-              <li><%#= link_to '회원가입', new_user_registration_path, :class => "link nav-link" #%></li>
+              <%# <li>= link_to '회원가입', new_user_registration_path, :class => "link nav-link" #</li> %>
               <li><%= link_to '로그인 / 회원가입', new_user_session_path, :class => "link nav-link" %></li>
             <% end %>
           </ul>
@@ -71,7 +71,7 @@
       </nav>
     </div>
   </header>
-  
+
   <body>
     <%= render partial: "shared/flash_messages", flash: flash %>
     <%= yield %>

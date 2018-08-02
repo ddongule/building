@@ -5,7 +5,8 @@ Rails.application.routes.draw do
 
   get 'payment/index'
 
-  devise_for :users
+  devise_for :users, controllers: { omniauth_callbacks: 'omniauth_callbacks' }
+
 
   root 'main#index', :as => 'root'
   

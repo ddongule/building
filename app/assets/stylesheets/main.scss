@@ -1,12 +1,11 @@
 // Place all the styles related to the main controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
-.main-wrap {
-  margin: 0 !important;
-  padding: 0 !important;
+.main-wrap{
+  position: fixed;
+  top: 10px;
+  left: 0px;
 }
-
 
 @keyframes slidy {
   0% { left: 0%; }
