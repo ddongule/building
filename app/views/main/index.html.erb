@@ -1,6 +1,22 @@
 <script>
-
+/*
+  $(document).ready(function(){
+    $('a').colorbox({
+      inline: true
+    }).click(function(){
+      setTimeout(function(){
+        $.colorbox.close();
+      },3000);
+    }).trigger('click');
+  });
+  */
 </script>
-
-<h1>드린킨 홈페easy입니다.</h1>
-<p>많이 사랑해주세요!</p>
+<head>
+  <link rel = "stylesheet" href="colorbox.css"/>
+  <script src = "jquery.colorbox.js"></script>
+</head>
+<body>
+  <h1>드린킨 홈페easy입니다.</h1>
+  <p>많이 사랑해주세요!</p>
+  <a href = "<%= asset_path 'logo.png'%>">logo</a>
+</body>
