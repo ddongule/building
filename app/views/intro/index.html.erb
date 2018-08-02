@@ -78,4 +78,47 @@
 	- GPS기반 한국 내 시장 분석 
 	- 어떤 와인이 잘 나가는지, 
 	- 어떤 지역에 와인이 잘 팔리는지
-	- 데이터 축적. 
+  - 데이터 축적. 
+
+
+  <head>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script>
+    function moveSlider(index){
+        // 이미지 슬라이더 이동
+        var willMoveLeft = -(index * 600);
+        $('.slider_panel').animate({left:willMoveLeft}, 'normal');
+        
+        // control_button에 active 클래스 부여 및 제거
+        $('.control_button[data-index='+index+']').addClass('active');
+        $('.control_button[data-index!='+index+']').removeClass('active');
+    };
+    
+    $(document).ready(function(){ 
+        $('.control_button').each(function(index){
+            $(this).attr('data-index', index);
+        }).click(function(){
+            var index = $(this).attr('data-index');
+            moveSlider(index);
+        });
+    });
+</script>
+</head>
+<body>
+    <div class='animation_canvas'>
+        <div class='slider_panel'>
+            <img class='slider_image' <%= image_tag ('logo.png') %> />
+            <img class='slider_image' src='http://www.bmw.co.kr/content/dam/bmw/common/all-models/m-series/x5m/2014/images-and-videos/1920x1200_02.jpg.resource.1416242346067.jpg/jcr:content/renditions/cq5dam.resized.img.890.medium.time1448007286505.jpg'/>
+            <img class='slider_image' src='http://cfile25.uf.tistory.com/image/2177C74A5735827A06C13A'/>
+            <img class='slider_image' src='http://img1.daumcdn.net/thumb/R720x0.q80/?scode=mtistory&fname=http%3A%2F%2Fcfile7.uf.tistory.com%2Fimage%2F213F1F46556C25A9189CE6'/>
+            <img class='slider_image' src='https://homepage1.kr:40100/ch501/seoulnam/data/file/78/3077404210_YJX5c7PN_5R_EC82B0ED86A0EBA6ACEB8B88_.22.jpg'/>
+        </div>
+        <div class='control_panel'>
+            <div class='control_button'></div>
+            <div class='control_button'></div>
+            <div class='control_button'></div>
+            <div class='control_button'></div>
+            <div class='control_button'></div>
+        </div>
+    </div>   
+</body>

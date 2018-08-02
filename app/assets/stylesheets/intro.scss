@@ -1,3 +1,84 @@
 // Place all the styles related to the intro controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+#film_roll{
+  position: relative;
+}
+.film_roll_wrapper{
+  height:500px !important;
+}
+.film_roll_child{
+  opacity: 0.3;
+}
+.film_roll_child.active{
+  opacity: 1;
+}
+.film_roll_pager{
+  padding-left:0;
+  padding-right: 0;
+  margin-top:-40px;
+  z-index: 100;
+  position: absolute;
+  left: calc(50% - 585px);
+}
+.film_roll_pager a{
+  background: rgba(254,254,254,0.8);
+  color:#333;
+  box-sizing: border-box !important;
+  padding-top:10px;
+}
+.film_roll_pager a.active, .film_roll_pager a:hover{
+  background: #f8cc33 !important;
+  color:#fff;
+}
+.film_roll_prev, .film_roll_next{
+  padding-top:18px !important;
+  font-family: 'nbg';
+}
+
+.film_roll_prev{
+  left:calc((100% - 1170px) / 2 ) !important;
+  background:url(../img/film_roll_prev-img.png) no-repeat 0 0 !important;
+}
+.film_roll_next{
+  right: calc((100% - 1170px) / 2 ) !important;
+  background:url(../img/film_roll_next-img.png) no-repeat 0 0 !important;
+}
+
+*{margin:0px; padding:0px;}
+    
+.animation_canvas{
+    overflow:hidden;
+    position:relative;
+    width:600px; height:400px;
+}
+
+.slider_panel{
+    width:3000px; position:relative;
+}
+
+.slider_image{
+    float:left;
+    width:600px; height:400px;
+}
+
+.control_panel{
+    position:absolute;
+    top:380px; left:270px; height:13px;
+    overflow:hidden;
+}
+
+.control_button{
+    width:12px; height:46px;
+    position:relative;
+    float:left; cursor:pointer;
+    background:url('http://www.whisperorphans.org/About/how-whisper-began-images/how-whisper-began-images/res/bullet3.png');
+}
+
+.control_button:hover{
+    top:-15px;
+}
+
+.control_button.active{
+    top:-30px;
+}

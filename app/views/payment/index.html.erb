@@ -1,12 +1,5 @@
 <head>
   <script>
-    /*
-    var dbTestRef = firebase.database().ref('test/');
-    dbTestRef.on('value',function(snapshot){
-      console.log(snapshot.val());
-    });
-    */
-    
     var nameStack = new Array();
 
     function send(){
@@ -39,13 +32,14 @@
 </head>
 
 <body>
-  <h1 id="head">결제하기</h1>
+  <h1 id="head">발주하기</h1>
     <script> var id_num = 0; </script>
-    <form action = "/receipt/index" method = "get" onsubmit = "return send()">
+    <form action = "/receipt/index" method = "post" onsubmit = "return send()">
+      <input type='hidden' value='<%= form_authenticity_token %>' name = 'authenticity_token'></input>
       <% for i in 0..@value.length-1 %>
         <label><%= @value[i] %></label>
         <lable>개수</label>
-        <input type = 'number' name = <%= @value[i] %> id = <%= i %>></input>
+        <input type = 'number' name = <%= @value[i] %> id = <%= i %>></input></br>
         <script>
           id_num++;
         </script>
@@ -56,7 +50,7 @@
         namePush(document.getElementById(i).name);
       </script>
       <input type = "hidden" name = "buyInfo" id = "info"></input>
-      <input type = "submit" value = "결제하기"></input>
+      <input type = "submit" value = "발주하기"></input>
     </form>
 
 </body>

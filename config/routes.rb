@@ -14,6 +14,6 @@ Rails.application.routes.draw do
   get 'faqs/index' => 'faqs#index', :as => 'faq'
   get 'tutorials/index' => 'tutorials#index', :as => 'tutorials'
   post 'payment/index' => 'payment#index'
-
+  post 'receipt/index' => 'receipt#index'
   get 'users/show'
 end
