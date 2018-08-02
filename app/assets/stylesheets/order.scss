@@ -1,14 +1,13 @@
 // Place all the styles related to the order controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
-
+/*
 body {
     margin:50px auto;
     width: 600px;
 }
 #row {
-    white-space: nowrap;/* 가로스크롤시 중요한 속성 */
+    white-space: nowrap;
     overflow-x: auto;
     overflow-y: hidden;
     padding: 10px 10px 5px;
@@ -62,3 +61,71 @@ body {
     font-weight: bold;
     background-color: #efefef;
 }
+*/
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+  }
+  .tabs {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  #tab-button {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  #tab-button li {
+    display: table-cell;
+    width: 20%;
+  }
+  #tab-button li a {
+    display: block;
+    padding: .5em;
+    background: #eee;
+    border: 1px solid #ddd;
+    text-align: center;
+    color: #000;
+    text-decoration: none;
+  }
+  #tab-button li:not(:first-child) a {
+    border-left: none;
+  }
+  #tab-button li a:hover,
+  #tab-button .is-active a {
+    border-bottom-color: transparent;
+    background: #fff;
+  }
+  .tab-contents {
+    padding: .5em 2em 1em;
+    border: 1px solid #ddd;
+  }
+  
+  
+  
+  .tab-button-outer {
+    display: none;
+  }
+  .tab-contents {
+    margin-top: 20px;
+  }
+  @media screen and (min-width: 768px) {
+    .tab-button-outer {
+      position: relative;
+      z-index: 2;
+      display: block;
+    }
+    .tab-select-outer {
+      display: none;
+    }
+    .tab-contents {
+      position: relative;
+      top: -1px;
+      margin-top: 0;
+    }
+  }

@@ -1,59 +1,135 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<head>
+    <script>
+        Array.prototype.remove = function(index){
+            this.splice(index,1);
+        }
 
-    <h1>주문하기</h1>
-    <head>
-        <script>
-            Array.prototype.remove = function(index){
-                this.splice(index,1);
+        var select_list = new Array();
+
+        function select(item){
+            var isExist = false;
+            var isExistIndex = 0;
+
+            for(var i = 0; i<select_list.length; i++){
+                if(select_list[i]===item){
+                    isExist = true;
+                    isExistIndex = i;
+                }
             }
+            }
+            if(isExist){
+                select_list.remove(isExistIndex);
+            }
+            else{
+            select_list.push(item);
+            }
+            console.log(select_list);
+        };
+        
+        function receive(){
+            var listBox = document.getElementById('list');
+            listBox.value = select_list;
+            alert(listBox.value);
+        };
 
-            var select_list = new Array();
+        $(function() {
+            var $tabButtonItem = $('#tab-button li'),
+                $tabSelect = $('#tab-select'),
+                $tabContents = $('.tab-contents'),
+                activeClass = 'is-active';
 
-            function select(item){
-                var isExist = false;
-                var isExistIndex = 0;
+            $tabButtonItem.first().addClass(activeClass);
+            $tabContents.not(':first').hide();
 
-                for(var i = 0; i<select_list.length; i++){
-                    if(select_list[i]===item){
-                        isExist = true;
-                        isExistIndex = i;
-                    }
-                }
-                if(isExist){
-                    select_list.remove(isExistIndex);
-                }
-                else{
-                select_list.push(item);
-                }
-                console.log(select_list);
-            };
-            
-            function receive(){
-                var listBox = document.getElementById('list');
-                listBox.value = select_list;
-                alert(listBox.value);
-            };
-        </script>
-    </head>
+            $tabButtonItem.find('a').on('click', function(e) {
+                var target = $(this).attr('href');
 
-    <div id="row">
-        <div class="items">
-            <p>레드 와인</p>
-            <section>
+                $tabButtonItem.removeClass(activeClass);
+                $(this).parent().addClass(activeClass);
+                $tabSelect.val(target);
+                $tabContents.hide();
+                $(target).show();
+                e.preventDefault();
+            });
+
+            $tabSelect.on('change', function() {
+                var target = $(this).val(),
+                    targetSelectNum = $(this).prop('selectedIndex');
+
+                $tabButtonItem.removeClass(activeClass);
+                $tabButtonItem.eq(targetSelectNum).addClass(activeClass);
+                $tabContents.hide();
+                $(target).show();
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>주문하기</h1>
+
+    <div class="tabs">
+    <div class="tab-button-outer">
+        <ul id="tab-button">
+        <li><a href="#tab01">동규네 와인샵</a></li>
+        <li><a href="#tab02">민경이네 레스토랑</a></li>
+        <li><a href="#tab03">동규와 민경 Bar</a></li>
+        <li><a href="#tab04">세련된 남매들 맛집</a></li>
+        <li><a href="#tab05">사장님이 미쳤어요</a></li>
+        </ul>
+    </div>
+    <div class="tab-select-outer">
+        <select id="tab-select">
+        <option value="#tab01"></option>
+        <option value="#tab02"></option>
+        <option value="#tab03"></option>
+        <option value="#tab04"></option>
+        <option value="#tab05"></option>
+        </select>
+    </div>
+
+    <div id="tab01" class="tab-contents">
+        <h2>동규네!</h2>
             <ul>
-                <li onclick="select('동규와인')">동규1</li>
-                <li onclick="select('화이트와인')">동규2</li>
-                <li onclick="select('블루와인')">동규3</li>
+                <li onclick="select('동규1번와인')">동규1번와인</li>
+                <li onclick="select('동규2번와인')">동규2번와인</li>
+                <li onclick="select('동규3번와인')">동규3번와인</li>
             </ul>
-            </section>
-        </div>
-        <div class="items">
-            <p>화이트 와인</p>
+    </div>
+    <div id="tab02" class="tab-contents">
+        <h2>민경이네!</h2>
             <ul>
-                <li onclick="select('민경와인')">민경1</li>
-                <li onclick="select('그레이와인')">민경2</li>
-                <li onclick="select('퍼플와인')">민경3</li>
+                <li onclick="select('민경1번와인')">민경1번와인</li>
+                <li onclick="select('민경2번와인')">민경2번와인</li>
+                <li onclick="select('민경3번와인')">민경3번와인</li>
             </ul>
-        </div>
+    </div>
+    <div id="tab03" class="tab-contents">
+        <h2>동&민 Bar</h2>
+            <ul>
+                <li onclick="select('동민1번와인')">동민1번와인</li>
+                <li onclick="select('동민2번와인')">동민2번와인</li>
+                <li onclick="select('동민3번와인')">동민3번와인</li>
+            </ul>
+    </div>
+    <div id="tab04" class="tab-contents">
+        <h2>세련쓰</h2>
+        <ul>
+            <li onclick="select('세련1번와인')">세련1번와인</li>
+            <li onclick="select('세련2번와인')">세련2번와인</li>
+            <li onclick="select('세련3번와인')">세련3번와인</li>
+        </ul>
+    </div>
+    <div id="tab05" class="tab-contents">
+        <h2>사장 도랏?</h2>
+        <ul>
+            <li onclick="select('사장1번와인')">사장1번와인</li>
+            <li onclick="select('사장2번와인')">사장2번와인</li>
+            <li onclick="select('사장3번와인')">사장3번와인</li>
+        </ul>
+    </div>
     </div>
 
     <form action = "/payment/index" method = "post">
@@ -61,3 +137,5 @@
         <input type='hidden' name = 'buyList' id = 'list'></input>
         <input type = 'submit' value = "주문하기" onclick = "receive()"></input>
     </form>
+</body>
+
