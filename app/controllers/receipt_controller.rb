@@ -2,6 +2,7 @@ class ReceiptController < ApplicationController
   def index
     @amount = Array.new
     shop = params[:shopInfo]
+    shop = shop.gsub!("_"," ")
     @wineShop = shop.split(",")
     @wineName = params[:buyInfo]
     @list = @wineName.split(",")

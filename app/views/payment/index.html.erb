@@ -8,7 +8,7 @@
     <form action = "/receipt/index" method = "post" onsubmit = "return send()">
       <input type='hidden' value='<%= form_authenticity_token %>' name = 'authenticity_token'></input>
       <% for i in 0..(@value.length/4)-1 %>
-        <label><%= @value[4*i+1] %>의 </label>
+        <label><%= @showValue[4*i+1] %>의 </label>
         <label><%= @value[4*i+3] %></label>
         <lable>개수</label>
         <input type = 'number' name = <%= @value[4*i+3] %> id = <%= i %>></input></br>
