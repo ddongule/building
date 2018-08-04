@@ -104,7 +104,7 @@ body .container {
   top: 0;
   left: 0;
   right: 0;
-  height: 50px;
+  height: 60px;
   background: #ffffff;
   border-bottom: 1px solid rgba(177, 0, 60, 1);
   box-shadow: 0 0 8px rgba(0,0,0,0.6);
@@ -160,6 +160,10 @@ li {
 	display: inline-block;
 	float: left;
 	padding: 5px;
+}
+
+.item-left li:first-child {
+  padding: 5px 5px 5px 45px;
 }
 
 // devise css
