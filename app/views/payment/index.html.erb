@@ -1,34 +1,5 @@
 <head>
-  <script>
-    var nameStack = new Array();
-
-    function send(){
-      var infoBox = document.getElementById('info');
-      infoBox.value = nameStack;
-
-      var sum = 0;
-      for(var i = 0; i< nameStack.length; i++){
-        sum += parseInt(document.getElementById(i).value);
-      }
-      
-      if(sum < 12){
-        event.cancelBubble = true;
-
-        alert('최소 주문 갯수는 12개입니다.');
-        return false;
-        if(event.stopPropagation){
-          event.stopPropagation();
-        }
-      }
-      else{
-        alert('성공!');
-      }
-    }
-
-    function namePush(item){
-      nameStack.push(item);
-    }
-  </script>
+  <%= javascript_include_tag("test.js") %>
 </head>
 
 <body>
@@ -36,19 +7,24 @@
     <script> var id_num = 0; </script>
     <form action = "/receipt/index" method = "post" onsubmit = "return send()">
       <input type='hidden' value='<%= form_authenticity_token %>' name = 'authenticity_token'></input>
-      <% for i in 0..@value.length-1 %>
-        <label><%= @value[i] %></label>
+      <% for i in 0..(@value.length/4)-1 %>
+        <label><%= @value[4*i+1] %>의 </label>
+        <label><%= @value[4*i+3] %></label>
         <lable>개수</label>
-        <input type = 'number' name = <%= @value[i] %> id = <%= i %>></input></br>
+        <input type = 'number' name = <%= @value[4*i+3] %> id = <%= i %>></input></br>
+        <input type = "hidden" value = <%= @value[4*i+1] %> id = <%= i+10000 %>></input>
         <script>
           id_num++;
         </script>
         <% end %>
       <br/>
       <script>
-        for(var i = 0; i < id_num; i++ )
-        namePush(document.getElementById(i).name);
+        for(var i = 0; i < id_num; i++ ){
+          namePush(document.getElementById(i).name);
+          shopPush(document.getElementById(i+10000).value);
+        }
       </script>
+      <input type = "hidden" name = "shopInfo" id = "shop"></input>
       <input type = "hidden" name = "buyInfo" id = "info"></input>
       <input type = "submit" value = "발주하기"></input>
     </form>
