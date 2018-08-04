@@ -1,7 +1,10 @@
 class OrderController < ApplicationController
   before_action :authenticate_user!, only: [ :index ]
-
+  require 'json'
+  require 'rubygems'
   def index
+    # @showValue = "hi"
+
   end
   
   # def edit
