@@ -101,10 +101,20 @@
         </ul>
     </div>
     </div>
-
-    <form action = "/payment/index" method = "post">
+     <form action = "/payment/index" method = "post">
         <input type='hidden' value='<%= form_authenticity_token %>' name = 'authenticity_token'></input>
         <input type='hidden' name = 'buyList' id = 'list'></input>
         <input type = 'submit' value = "발주하기" onclick = "receive()"></input>
     </form>
 </div>
+
+<%# what is the problem ???!?!?!?!?!??  %>
+<%= form_tag ('/payment/index'), controller: "payment", method: :post do %>
+    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+    <%= hidden_field_tag :buyList, params[@showValue] %>
+    <%= submit_tag "발주하기", :onclick => "receive();" %>
+   
+<% end %>
+
+
+
