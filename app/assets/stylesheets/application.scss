@@ -121,7 +121,7 @@ body .container {
 }
 
 .header .logo .logo-link {
-  margin: 0;
+  margin: 0px 0px 0px 5px;
   float: left;
   width: 110px;
   height: 35px;
@@ -159,9 +159,13 @@ body .container {
 li {
 	display: inline-block;
 	float: left;
-	padding: 5px;
+  padding: 5px;
+  
 }
-
+.item-left li,
+.item-right li {
+  font-size: 1.1em;
+}
 .item-left li:first-child {
   padding: 5px 5px 5px 45px;
 }
