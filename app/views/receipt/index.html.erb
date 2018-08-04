@@ -7,7 +7,7 @@
     <%= @wineShop[i] %>에서 <%= @list[i] %>을 <%= @amount[i]%>개 구입하였습니당~<br/>
     <input type = 'hidden' value = '<%= @list[i] %>+<%= @amount[i]%>' id = <%= i %>></input>
     <script>
-      makeList('<%=@list[i]%>',<%=@amount[i]%>);
+      makeList('<%= @wineShop[i] %>','<%=@list[i]%>',<%=@amount[i]%>);
       console.log(document.getElementById(<%=i%>).value);
     </script>
   <% end %>

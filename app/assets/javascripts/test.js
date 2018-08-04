@@ -85,11 +85,14 @@ function writeUserData(userEmail) {
   var newdate = date.yyyymmdd();
 
   for(var i = 0; i<orderList.length; i++){
-    firebase.database().ref('users/' + userEmail + '/' + newdate ).push(orderList[i]);
+    var shopname = orderList[i].와인샵;
+    delete(orderList[i].와인샵);
+    var orderTime = date.getHours()+'시'+date.getMinutes()+'분';
+    firebase.database().ref('users/' + userEmail + '/' + newdate + '/' + orderTime + '/' + shopname ).push(orderList[i]);
   }
 }
 
-makeList = function(name,amount){
-  var newList = {와인: name, 개수: amount};
+makeList = function(shop,name,amount){
+  var newList = {와인샵: shop, 와인: name, 개수: amount};
   orderList.push(newList);
 };
