@@ -10,9 +10,9 @@ class PaymentController < ApplicationController
     @list = @list.gsub!(']',"")
     @list = @list.gsub!('{',"")
     @list = @list.gsub!('}',"")
-    temp = @list
+    @temp = @list
     @value = @list.split(",")
-    @showValue = temp.gsub!('_'," ")
+    @showValue = @temp.gsub!('_'," ")
     @showValue = @showValue.split(",")
   end
 end
