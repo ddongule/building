@@ -22,7 +22,7 @@ Devise.setup do |config|
   # with default "from" parameter.
   
   # 구글 로그인 추가
-  config.omniauth :google_oauth2, '538963791573-hgumt13eq2qhml4fkb7jnruke6pfpauu.apps.googleusercontent.com', 'VoaByyOTo4PiXUSc0w_qWB9n', {}
+  config.omniauth :google_oauth2, ENV["secret_key"], ENV["secret_pw"], {}
   
   
   
