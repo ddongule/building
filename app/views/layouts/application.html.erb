@@ -46,7 +46,7 @@
 
     <div class="header-item-container">
       <nav class="navigation">
-        <div class="item-left">
+        <div class="item-right">
           <%#= image_tag ('menu.png'), :id => "menu-icon" %>
           <ul>
             <%# <li><%= link_to 'Home', root_path, :class => "link nav-link" </li> %>
@@ -56,7 +56,7 @@
             <li><%= link_to '이용안내', tutorials_path, :class => "link nav-link" %></li>
           </ul>
         </div>
-        <div class="item-right">
+        <div class="item-right-up">
           <ul>
             <% if user_signed_in? %>
                 <li><%= link_to "Roles : " + user_roles(current_user), '#', :class => "link nav-link" %></li> 
