@@ -45,30 +45,32 @@
     </div>
 
     <div class="header-item-container">
-      <nav class="navigation">
-        <div class="item-left">
-          <%#= image_tag ('menu.png'), :id => "menu-icon" %>
-          <ul>
-            <%# <li><%= link_to 'Home', root_path, :class => "link nav-link" </li> %>
-            <li><%= link_to '와잉 소개', intro_index_path, :class => "link nav-link" %></li>
-            <li><%= link_to '발주하기', order_path, :class => "link nav-link" %></li>
-            <li><%= link_to 'FAQ', faq_path, :class => "link nav-link" %></li>
-            <li><%= link_to '이용안내', tutorials_path, :class => "link nav-link" %></li>
-          </ul>
-        </div>
-        <div class="item-right">
-          <ul>
-            <% if user_signed_in? %>
-                <li><%= link_to "Roles : " + user_roles(current_user), '#', :class => "link nav-link" %></li> 
-                <li><%= link_to  current_user.name + "님", myinfo_index_path, :class => "link nav-link" %></li> 
-                <li><%= link_to '로그아웃', destroy_user_session_path, :method => :delete, :class => "link nav-link" %></li>
-            <% else %>
-              <%# <li>= link_to '회원가입', new_user_registration_path, :class => "link nav-link" #</li> %>
-              <li><%= link_to '로그인 / 회원가입', new_user_session_path, :class => "link nav-link" %></li>
-            <% end %>
-          </ul>
-        </div>
-      </nav>
+      <div class="nav">
+        <nav class="navigation">
+          <div class="item-right">
+            <%#= image_tag ('menu.png'), :id => "menu-icon" %>
+            <ul>
+              <%# <li><%= link_to 'Home', root_path, :class => "link nav-link" </li> %>
+              <li><%= link_to '와잉 소개', intro_index_path, :class => "link nav-link" %></li>
+              <li><%= link_to '발주하기', order_path, :class => "link nav-link" %></li>
+              <li><%= link_to 'FAQ', faq_path, :class => "link nav-link" %></li>
+              <li><%= link_to '이용안내', tutorials_path, :class => "link nav-link" %></li>
+            </ul>
+          </div>
+          <div class="item-right-up">
+            <ul>
+              <% if user_signed_in? %>
+                  <li><%= link_to "Roles : " + user_roles(current_user), '#', :class => "link nav-link" %></li> 
+                  <li><%= link_to  current_user.name + "님", myinfo_index_path, :class => "link nav-link" %></li> 
+                  <li><%= link_to '로그아웃', destroy_user_session_path, :method => :delete, :class => "link nav-link" %></li>
+              <% else %>
+                <%# <li>= link_to '회원가입', new_user_registration_path, :class => "link nav-link" #</li> %>
+                <li><%= link_to '로그인 / 회원가입', new_user_session_path, :class => "link nav-link" %></li>
+              <% end %>
+            </ul>
+          </div>
+        </nav>
+      </div>
     </div>
   </header>
 
