@@ -135,6 +135,14 @@ body .container {
   // float: right;
   margin: 50px;
   font-size: 16px;
+  vertical-align: middle;
+}
+
+.header .header-item-container .navigation {
+  // test
+  position: relative;
+  display: block;
+  float: right;
 }
 
 // .header .navigation .item-left {
@@ -146,7 +154,18 @@ body .container {
 .header .navigation .item-right-up {
   // display: inline;
   float: right;
+  top: 10%;
 }
+
+.header .navigation .item-right ul {
+  // test
+  display: block;
+  padding: 0;
+  position: absolute;
+  top: 26px;
+  right: 15px;
+}
+
 
 .header .navigation .nav-link {
   padding: 0px 5px 0px 10px;
