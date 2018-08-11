@@ -1,42 +1,47 @@
-
 <div class="main-wrap">
   <script>
-  /*
-    $(document).ready(function(){
-      $('a').colorbox({
-        inline: true
-      }).click(function(){
-        setTimeout(function(){
-          $.colorbox.close();
-        },3000);
-      }).trigger('click');
-    });
-    */
+    onload  = start;
+
+    function start(){	
+    var i = 1;
+    function Move(){ 	
+      i = (i%4)+1; // 4 is the Number of image in slider
+      document.getElementById('i'+i).checked = true;
+    }
+    setInterval(Move,3000); //change img in 3 sec
+    }
   </script>
-
+<%# 
   <h1>드린킨 홈페easy입니다.</h1>
-  <p>많이 사랑해주세요!</p>
+  <p>많이 사랑해주세요!</p> %>
 
-  <%# 
-  <base href="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/">
-  <div id="slider">
-    <figure>
-      <img src="austin-fireworks.jpg" alt>
-      <img src="taj-mahal_copy.jpg" alt>
-      <img src="ibiza.jpg" alt>
-      <img src="ankor-wat.jpg" alt>
-      <img src="austin-fireworks.jpg" alt>
-    </figure>
-  </div> %> 
+<div class="container">
+	<input type="radio" id="i1" name="images" checked/>
+	<input type="radio" id="i2" name="images" />
+	<input type="radio" id="i3" name="images" />
+	<input type="radio" id="i4" name="images"  />
+	
+	<div class="slide_img" id="one">			
+    <%# <%= image_tag("wine1.jpg") %> 
+	</div>
+	
+	<div class="slide_img" id="two">
+    <%# <%= image_tag("wine2.jpg") %>
+	</div>
+			
+	<div class="slide_img" id="three">
+    <%# <%= image_tag("wine3.jpg") %> 
+	</div>
 
+	<div class="slide_img" id="four">
+    <%# <%= image_tag("wine4.jpg") %> 
+	</div>
 
-  <div id="slider">
-    <figure>
-      <img src="https://cdn.pixabay.com/photo/2018/07/04/00/19/champagne-3515140_1280.jpg" alt>
-      <img src="https://cdn.pixabay.com/photo/2017/01/31/20/48/aperitif-2027177_1280.jpg" alt>
-      <%# <img src="ibiza.jpg" alt>
-      <img src="ankor-wat.jpg" alt>
-      <img src="austin-fireworks.jpg" alt> %>
-    </figure>
-  </div>
+	<div id="nav_slide">
+		<label for="i1" class="dots" id="dot1"></label>
+		<label for="i2" class="dots" id="dot2"></label>
+		<label for="i3" class="dots" id="dot3"></label>
+		<label for="i4" class="dots" id="dot4"></label>
+	</div>
+</div>
 </div>
