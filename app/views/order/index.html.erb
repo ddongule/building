@@ -1,43 +1,43 @@
-
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
-<%= javascript_include_tag("test.js") %>
-    <script>
-        $(function() {
-            var $tabButtonItem = $('#tab-button li'),
-                $tabSelect = $('#tab-select'),
-                $tabContents = $('.tab-contents'),
-                activeClass = 'is-active';
-
-            $tabButtonItem.first().addClass(activeClass);
-            $tabContents.not(':first').hide();
-
-            $tabButtonItem.find('a').on('click', function(e) {
-                var target = $(this).attr('href');
-
-                $tabButtonItem.removeClass(activeClass);
-                $(this).parent().addClass(activeClass);
-                $tabSelect.val(target);
-                $tabContents.hide();
-                $(target).show();
-                e.preventDefault();
-            });
-
-            $tabSelect.on('change', function() {
-                var target = $(this).val(),
-                    targetSelectNum = $(this).prop('selectedIndex');
-
-                $tabButtonItem.removeClass(activeClass);
-                $tabButtonItem.eq(targetSelectNum).addClass(activeClass);
-                $tabContents.hide();
-                $(target).show();
-            });
-        });
-    </script>
-
 <div class="order-wrap">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <%= javascript_include_tag("test.js") %>
+        <script>
+            $(function() {
+                var $tabButtonItem = $('#tab-button li'),
+                    $tabSelect = $('#tab-select'),
+                    $tabContents = $('.tab-contents'),
+                    activeClass = 'is-active';
+
+                $tabButtonItem.first().addClass(activeClass);
+                $tabContents.not(':first').hide();
+
+                $tabButtonItem.find('a').on('click', function(e) {
+                    var target = $(this).attr('href');
+
+                    $tabButtonItem.removeClass(activeClass);
+                    $(this).parent().addClass(activeClass);
+                    $tabSelect.val(target);
+                    $tabContents.hide();
+                    $(target).show();
+                    e.preventDefault();
+                });
+
+                $tabSelect.on('change', function() {
+                    var target = $(this).val(),
+                        targetSelectNum = $(this).prop('selectedIndex');
+
+                    $tabButtonItem.removeClass(activeClass);
+                    $tabButtonItem.eq(targetSelectNum).addClass(activeClass);
+                    $tabContents.hide();
+                    $(target).show();
+                });
+            });
+        </script>
+
+
     <h1>주문하기</h1>
 
     <div class="tabs">
