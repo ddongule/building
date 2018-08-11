@@ -8,22 +8,31 @@
 // }
 
 .container div#one {
+  display: block;
   background-image: url('wine1.jpg');
   background-size: cover;
+  background-repeat: no-repeat;
 }
 .container div#two {
+  display: block;
   background-image: url('wine2.jpg');
   background-size: cover;
-
+  background-repeat: no-repeat;
 }
 .container div#three {
+  display: block;
   background-image: url('wine3.jpg');
   background-size: cover;
+  background-repeat: no-repeat;
+
 }
 .container div#four {
+  display: block;
   background-image: url('wine4.jpg');
   background-size: cover;
+  background-repeat: no-repeat;
 }
+
 $magenta: rgb(128, 22, 14);
 
 .container {
@@ -84,7 +93,7 @@ $magenta: rgb(128, 22, 14);
 #i3:checked ~ #three,
 #i4:checked ~ #four {
 	z-index: 9;
-	animation: scroll 1s ease-in-out;
+	animation: slider 1s ease-in-out;
 }
 
 #i1:checked ~ #nav_slide #dot1 {background: $magenta;}
@@ -94,9 +103,9 @@ $magenta: rgb(128, 22, 14);
 
 
 
-@keyframes scroll {
-	0% { opacity: .4;}
-	100% { opacity: 1;}
+@keyframes slider {
+    // from {opacity: 1;}
+    // to {opacity: 0.1;}
 }
 
 

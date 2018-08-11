@@ -1,10 +1,12 @@
 // Place all the styles related to the myinfo controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-body {
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 300;
+.info-wrap{
+  margin: 120px 50px;
+  padding: 50px 50px 50px 10px;
 }
+
+
 .tabs {
   max-width: 640px;
   margin: 0 auto;
