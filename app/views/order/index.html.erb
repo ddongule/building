@@ -3,19 +3,6 @@
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-<<<<<<< HEAD
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
-<%= javascript_include_tag("order.js") %>
-    <script>
-        $(function() {
-            var $tabButtonItem = $('#tab-button li'),
-                $tabSelect = $('#tab-select'),
-                $tabContents = $('.tab-contents'),
-                activeClass = 'is-active';
-=======
     <%= javascript_include_tag("test.js") %>
         <script>
             $(function() {
@@ -23,7 +10,6 @@
                     $tabSelect = $('#tab-select'),
                     $tabContents = $('.tab-contents'),
                     activeClass = 'is-active';
->>>>>>> upstream/master
 
                 $tabButtonItem.first().addClass(activeClass);
                 $tabContents.not(':first').hide();
@@ -121,6 +107,13 @@
         <input type = 'submit' value = "발주하기" onclick = "receive()"></input>
     </form>
 </div>
+
+<%# what is the problem ???!?!?!?!?!??  %>
+<%#= form_tag ('/payment/index'), controller: "payment", method: :post do %>
+    <%#= hidden_field_tag :authenticity_token, form_authenticity_token %>
+    <%#= hidden_field_tag :buyList, :id => list %>
+    <%#= submit_tag "발주하기", :onclick => "receive();" %>
+<%# end %>
 
 
 

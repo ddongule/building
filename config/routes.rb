@@ -10,12 +10,10 @@ Rails.application.routes.draw do
 
   root 'main#index', :as => 'root'
   
-  get 'main/faq' => 'main#faq', :as => 'faq'
-  get 'main/intro'=> 'main#intro', :as => 'intro_index'
-  get 'main/tutorial' => 'main#tutorial', :as => 'tutorials'
-
-
   get 'order/index', :as => 'order'
+  get 'intro/index', :as => 'intro_index'
+  get 'faqs/index' => 'faqs#index', :as => 'faq'
+  get 'tutorials/index' => 'tutorials#index', :as => 'tutorials'
   post 'payment/index' => 'payment#index', :as => 'payment'
   post 'receipt/index' => 'receipt#index'
   get 'users/show'
