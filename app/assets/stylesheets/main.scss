@@ -61,12 +61,14 @@ $magenta: rgb(128, 22, 14);
 
 	#nav_slide {
 		width: 100%;
-		bottom: 12%;
-		height: 11px;
-		position: absolute;
-		text-align: center;
-		z-index: 99;
-		cursor: default;
+    bottom: 12%;
+    height: 11px;
+    position: absolute;
+    text-align: center;
+    z-index: 99;
+    cursor: default;
+    left: 0%;
+    transform: translateX(50%);
 
 		.dots {
 			top: -5px;
