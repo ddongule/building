@@ -77,6 +77,7 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 body {
+  // 첫 화면에 margin이 생기면 안되기 때문에 지움
   // margin: 120px 50px;
   // padding: 50px 50px 50px 10px;
   // background-color: rgba(210,210,210,.2);
@@ -114,8 +115,6 @@ body .container {
 
 /* header div 안의 item */
 
-
-
 .header .logo .logo-link {
   margin: 30px 0px 0px 70px;
   float: left;
@@ -132,13 +131,29 @@ body .container {
   margin: 20px 50px;
   vertical-align: middle;
 }
+.header .header-item-container .nav{
+  // flex-wrap: wrap;
+  padding-left: 0;
+  list-style: none;
+  display: block;
+}
 
 .header .header-item-container .navigation {
   // test
+  // 원래 코드
   position: relative;
   display: block;
   float: right;
 }
+///////////////////test
+.header .header-item-container .navigation a { 
+  float: right;
+  display: block;
+  text-align: center;
+  text-decoration: none;
+}
+
+
 
 .header .header-item-container .navigation .item-right .nav-up{
   display: block;
@@ -222,31 +237,26 @@ li {
 }
 
 @media (min-width: 1024px) {
-  .font-item {
-    width: 31.333333%;
-  }
+
 }
 
 @media (min-width: 1366px) {
-  .font-item {
-    width: 23%;
-  }
+
 }
 
-@media only screen and (max-width : 640px) {
+@media only screen and (max-width : 720px) {
 
   nav ul, nav:active ul {
     display: none;
-    position: absolute;
-    padding: 20px;
-    background: #fff;
-    border: 2px solid steelblue;
-    right: 10px;
-    top: 42px;
-    width: 140px;
-    border-radius: 10px 0 10px 10px;
-  }
+    // position: absolute;
+    // padding: 20px;
+    // background: #fff;
 
+    // right: 10px;
+    // top: 42px;
+    // width: 140px;
+    // border-radius: 10px 0 10px 10px;
+  }
 	nav li {
 		text-align: center;
 		width: 100%;
@@ -259,7 +269,21 @@ li {
   }
 
   #menu-icon {
-    display:inline-block;
+    // display:inline-block;
+    position: absolute;
+    height: 35px;
+    top: 40px;
+    right: 40px;
+    display: block;  
   }
-
+   .header .header-item-container .navigation a {
+    overflow: hidden;
+    display: none;
+  }
 }
+
+  @media only screen and (max-width : 400px) {
+    #menu-icon {
+      display: none;   
+    }
+  }
