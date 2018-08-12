@@ -131,6 +131,13 @@ body .container {
   margin: 20px 50px;
   vertical-align: middle;
 }
+.header .header-item-container .nav{
+  flex-wrap: wrap;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+  display: block;
+}
 
 .header .header-item-container .navigation {
   // test
@@ -232,15 +239,11 @@ li {
 }
 
 @media (min-width: 1024px) {
-  .font-item {
-    width: 31.333333%;
-  }
+
 }
 
 @media (min-width: 1366px) {
-  .font-item {
-    width: 23%;
-  }
+
 }
 
 @media only screen and (max-width : 720px) {
