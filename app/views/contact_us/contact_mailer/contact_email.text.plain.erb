@@ -1,0 +1,6 @@
+<div class="contact-wrap">
+  <%= @contact.message %>
+
+  -------------------------------------
+  <%= ContactUs.require_name ? t('.sent_by_name', :email => @contact.email, :name => @contact.name) : t('.sent_by_contact_form', :email => @contact.email) %>
+</div>
