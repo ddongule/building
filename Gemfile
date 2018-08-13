@@ -5,6 +5,7 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+gem 'contact_us', '~> 1.0.1'
 gem 'figaro'
 gem 'json'
 gem 'omniauth-google-oauth2'
